@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invoice Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand"><img class="brand-logo" src="yash-enterprises-logo.png" alt="YASH Enterprises logo">
+      <div><strong>YASH ENTERPRISES</strong><small>Business invoice generator</small></div>
+    </div>
+    <div class="top-actions"><span class="autosave"><i></i> Live preview</span><button class="btn btn-primary"
+        id="printBtn">Print / Save PDF</button></div>
+  </header>
+  <main class="workspace">
+    <section class="editor">
+      <div class="page-heading">
+        <div>
+          <p class="eyebrow">WORKSPACE</p>
+          <h1>Create invoice</h1>
+          <p class="muted">Enter your details. Your invoice updates instantly.</p>
+        </div><button class="btn btn-light" id="resetBtn">Reset</button>
+      </div>
+      <section class="panel">
+        <div class="panel-title"><span class="step">01</span>
+          <div>
+            <h2>Your business</h2>
+            <p>Details displayed at the top of the invoice</p>
+          </div>
+        </div>
+        <div class="field-grid"><label class="wide">Business name<input id="businessName"
+              value="YASH ENTERPRISES"></label><label class="wide">Business address<textarea id="businessAddress"
+              rows="2">Akola, Maharashtra, India</textarea></label><label>GSTIN<input id="businessGstin"
+              placeholder="Enter GSTIN" value="27EBWPA0534A1Z0"></label><label>Phone<input id="businessPhone"
+              placeholder="Phone number" value="+91 8788874261"></label><label class="wide">Email<input id="businessEmail" type="email"
+              placeholder="Email address" value="yashenterprises.akola@gmail.com"></label></div>
+      </section>
+      <section class="panel">
+        <div class="panel-title"><span class="step">02</span>
+          <div>
+            <h2>Invoice information</h2>
+            <p>Invoice number, date and tax type</p>
+          </div>
+        </div>
+        <div class="field-grid"><label>Invoice number<input id="invoiceNo" value="INV-001"></label><label>Invoice
+            date<input id="invoiceDate" type="date"></label><label>Place of supply<input id="placeSupply"
+              placeholder="e.g. Maharashtra"></label><label>Supply type<select id="taxType">
+              <option value="intra">Within state (CGST + SGST)</option>
+              <option value="inter">Other state (IGST)</option>
+            </select></label></div>
+      </section>
+      <section class="panel">
+        <div class="panel-title"><span class="step">03</span>
+          <div>
+            <h2>Bill to</h2>
+            <p>Customer or recipient details</p>
+          </div>
+        </div>
+        <div class="field-grid"><label class="wide">Customer / company name<input id="customerName"
+              placeholder="Customer name"></label><label class="wide">Billing address<textarea id="customerAddress"
+              rows="2" placeholder="Full billing address"></textarea></label><label>Customer GSTIN<input
+              id="customerGstin" placeholder="GSTIN (if applicable)"></label><label>Contact number<input
+              id="customerPhone" placeholder="Phone number"></label></div>
+      </section>
+      <section class="panel">
+        <div class="panel-title"><span class="step">04</span>
+          <div>
+            <h2>Shipping To</h2>
+            <p>Delivery recipient and destination details</p>
+          </div>
+        </div>
+        <div class="field-grid"><label class="wide">Recipient / company name<input id="shippingName"
+              placeholder="Shipping recipient"></label><label class="wide">Shipping address<textarea
+              id="shippingAddress" rows="2" placeholder="Full delivery address"></textarea></label><label>Recipient
+            GSTIN<input id="shippingGstin" placeholder="GSTIN (if applicable)"></label><label>Contact number<input
+              id="shippingPhone" placeholder="Phone number"></label></div>
+      </section>
+      <section class="panel">
+        <div class="panel-title"><span class="step">05</span>
+          <div>
+            <h2>Items and services</h2>
+            <p>Add products or services to this invoice</p>
+          </div>
+        </div>
+        <div class="items-editor" id="itemsEditor"></div><button class="btn btn-outline add-btn" id="addItemBtn">＋ Add
+          item</button>
+        <div class="field-grid tax-fields"><label>GST rate<select id="gstRate">
+              <option value="5">5%</option>
+              <option value="12">12%</option>
+              <option value="18">18%</option>
+              <option value="28">28%</option>
+              <option value="0">0%</option>
+            </select></label><label>Discount (₹)<input id="discount" type="number" min="0" step="0.01"
+              value="0"></label></div>
+      </section>
+      <section class="panel">
+        <div class="panel-title"><span class="step">06</span>
+          <div>
+            <h2>Payment and notes</h2>
+            <p>Optional details for your customer</p>
+          </div>
+        </div>
+        <div class="field-grid"><label class="wide">Bank / UPI details<textarea id="paymentDetails" rows="2"
+              placeholder="Bank name, account number, IFSC or UPI ID">Bank Name: AU Small Finance Bank
+Account Name: YASH ENTERPRISES
+Account Number: 2602236524968379
+IFSC: AUBL0002365 </textarea></label><label class="wide">Terms and
+            notes<textarea id="notes" rows="2" placeholder="Thank you for your business."></textarea></label></div>
+      </section>
+    </section>
+    <section class="preview-area">
+      <div class="preview-toolbar">
+        <div><strong>Live preview</strong><small>A4 · Tax invoice</small></div><span class="preview-status">Updating
+          automatically</span>
+      </div>
+      <article class="invoice" id="invoicePreview">
+        <div class="invoice-topline"><span>TAX INVOICE</span><span id="pInvoiceNo">INV-001</span></div>
+        <div class="invoice-header">
+          <div class="invoice-brand"><img class="invoice-logo" src="yash-enterprises-logo.png"
+              alt="YASH Enterprises logo">
+            <div class="invoice-business-details">
+              <h2 id="pBusinessName">YASH ENTERPRISES</h2>
+              <p id="pBusinessAddress">Akola, Maharashtra, India</p>
+              <p id="pBusinessContact"></p>
+              <p id="pBusinessGstin"></p>
+            </div>
+          </div>
+          <div class="invoice-label">INVOICE</div>
+        </div>
+        <div class="invoice-meta">
+          <div><small>INVOICE NUMBER</small><strong id="pMetaNo">INV-001</strong></div>
+          <div><small>DATE</small><strong id="pDate">—</strong></div>
+          <div><small>PLACE OF SUPPLY</small><strong id="pPlace">—</strong></div>
+        </div>
+        <div class="party-grid">
+          <div class="bill-block">
+            <div class="bill-heading">BILL TO</div><strong id="pCustomerName">Customer name</strong>
+            <p id="pCustomerAddress">Customer address</p>
+            <p id="pCustomerContact"></p>
+            <p id="pCustomerGstin"></p>
+          </div>
+          <div class="bill-block">
+            <div class="bill-heading">SHIPPING TO</div><strong id="pShippingName">—</strong>
+            <p id="pShippingAddress"></p>
+            <p id="pShippingContact"></p>
+            <p id="pShippingGstin"></p>
+          </div>
+        </div>
+        <table class="invoice-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>DESCRIPTION</th>
+              <th>HSN/SAC</th>
+              <th class="num">QTY</th>
+              <th class="num">RATE (₹)</th>
+              <th class="num">AMOUNT (₹)</th>
+            </tr>
+          </thead>
+          <tbody id="previewItems"></tbody>
+        </table>
+        <div class="invoice-bottom">
+          <div class="tax-summary">
+            <h3>Tax summary (HSN-wise)</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>HSN/SAC</th>
+                  <th class="num">Taxable (₹)</th>
+                  <th class="num" id="pTaxHead">CGST + SGST</th>
+                  <th class="num">Tax (₹)</th>
+                </tr>
+              </thead>
+              <tbody id="previewTax"></tbody>
+            </table>
+            <div class="amount-words"><small>AMOUNT IN WORDS</small>
+              <p id="pAmountWords">INR Zero Only</p>
+            </div>
+            <div class="amount-words"><small>TAX AMOUNT IN WORDS</small>
+              <p id="pTaxWords">INR Zero Only</p>
+            </div>
+          </div>
+          <div class="totals">
+            <div><span>Subtotal</span><strong id="pSubtotal">₹0.00</strong></div>
+            <div><span>Discount</span><strong id="pDiscount">− ₹0.00</strong></div>
+            <div id="pCgstRow"><span>CGST</span><strong id="pCgst">₹0.00</strong></div>
+            <div id="pSgstRow"><span>SGST</span><strong id="pSgst">₹0.00</strong></div>
+            <div id="pIgstRow" class="hidden"><span>IGST</span><strong id="pIgst">₹0.00</strong></div>
+            <div class="grand-total"><span>Total due</span><strong id="pGrand">₹0.00</strong></div>
+          </div>
+        </div>
+        <div class="invoice-footer">
+          <div><small>PAYMENT DETAILS</small>
+            <p id="pPayment">—</p><small>NOTES / TERMS</small>
+            <p id="pNotes">Thank you for your business.</p>
+          </div>
+          <div class="signature"><span>For <b id="pSignName">YASH ENTERPRISES</b></span>
+            <div></div><small>Authorised Signatory</small>
+          </div>
+        </div>
+        <div class="invoice-end">This is a computer-generated invoice.</div>
+      </article>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>

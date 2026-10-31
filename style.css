@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+:root{--ink:#172033;--muted:#788297;--line:#e7eaf0;--blue:#315efb;--bg:#f5f7fb}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif}.topbar{height:72px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 4.5%;position:sticky;top:0;z-index:5}.brand{display:flex;align-items:center;gap:11px}.brand-mark{width:36px;height:36px;background:#315efb;color:white;border-radius:10px;display:grid;place-items:center;font:800 21px Manrope}.brand strong,.brand small{display:block}.brand strong{font:800 15px Manrope}.brand small{font-size:11px;color:var(--muted);margin-top:2px}.top-actions{display:flex;align-items:center;gap:20px}.autosave{font-size:12px;color:#647086}.autosave i{display:inline-block;width:7px;height:7px;background:#22b77a;border-radius:50%;margin-right:6px}.btn{border:0;border-radius:8px;padding:11px 16px;font:600 12px 'DM Sans';cursor:pointer}.btn-primary{background:var(--blue);color:#fff}.btn-light{background:#eef1f8;color:#536078}.workspace{max-width:1500px;margin:30px auto;padding:0 28px;display:grid;grid-template-columns:minmax(420px,560px) minmax(500px,1fr);gap:34px;align-items:start}.page-heading{display:flex;justify-content:space-between;align-items:center;margin:0 0 22px}.eyebrow{font-size:10px;letter-spacing:1.5px;color:var(--blue);font-weight:700;margin:0 0 7px}.page-heading h1{font:800 25px Manrope;margin:0}.muted{font-size:12px;color:var(--muted);margin:6px 0 0}.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:15px;box-shadow:0 2px 8px #24365b05}.panel-title{display:flex;gap:12px;align-items:center;margin-bottom:18px}.step{width:29px;height:29px;border-radius:8px;background:#eef2ff;color:var(--blue);display:grid;place-items:center;font-size:11px;font-weight:700}.panel-title h2{font:700 14px Manrope;margin:0}.panel-title p{font-size:11px;color:var(--muted);margin:3px 0 0}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field-grid label{display:flex;flex-direction:column;gap:6px;color:#566176;font-size:11px;font-weight:600}.field-grid .wide{grid-column:1/-1}input,textarea,select{width:100%;border:1px solid #e3e7ef;border-radius:7px;padding:10px 11px;font:12px 'DM Sans';color:var(--ink);background:#fff;outline:none;min-width:0}input:focus,textarea:focus,select:focus{border-color:#8ca4ff;box-shadow:0 0 0 3px #315efb12}textarea{resize:vertical}.items-editor{display:grid;gap:10px}.item-edit{border:1px solid var(--line);border-radius:9px;padding:12px;position:relative}.item-edit-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:11px;font-weight:700}.remove-item{border:0;background:#fff0f0;color:#d34d4d;border-radius:6px;padding:5px 8px;cursor:pointer}.item-fields{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:8px}.item-fields label{font-size:10px;color:var(--muted);display:grid;gap:5px}.item-fields .desc{grid-column:1/-1}.item-fields input{padding:8px;font-size:11px}.add-btn{width:100%;margin-top:11px}.btn-outline{background:#fff;border:1px dashed #b9c7f8;color:var(--blue)}.tax-fields{margin-top:16px;padding-top:15px;border-top:1px solid var(--line)}.preview-area{position:sticky;top:94px;min-width:0}.preview-toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px}.preview-toolbar strong,.preview-toolbar small{display:block}.preview-toolbar strong{font:700 13px Manrope}.preview-toolbar small,.preview-status{font-size:10px;color:var(--muted);margin-top:3px}.invoice{background:#fff;box-shadow:0 8px 35px #26365c12;border:1px solid #e8ebf1;padding:34px 36px;min-height:760px;font-size:10px;color:#263044}.invoice-topline{display:flex;justify-content:space-between;color:#315efb;font-size:9px;font-weight:700;letter-spacing:1.3px;padding-bottom:10px;border-bottom:2px solid #315efb}.invoice-header{display:flex;justify-content:space-between;align-items:flex-start;padding:22px 0}.invoice-header h2{font:800 19px Manrope;margin:0 0 7px;color:#172033}.invoice-header p,.bill-block p,.invoice-footer p{margin:3px 0;color:#667187;white-space:pre-line;line-height:1.5}.invoice-label{font:800 25px Manrope;color:#e6eaf2;letter-spacing:1px}.invoice-meta{display:grid;grid-template-columns:repeat(3,1fr);background:#f6f8fc;padding:12px 14px;border-radius:6px;gap:8px}.invoice-meta small,.amount-words small,.invoice-footer small{display:block;font-size:7px;color:#8791a4;letter-spacing:.8px;font-weight:700;margin-bottom:5px}.invoice-meta strong{font-size:10px}.bill-block{padding:20px 0}.bill-heading{font-size:8px;color:#315efb;font-weight:700;letter-spacing:1px;margin-bottom:8px}.bill-block>strong{font-size:11px}.invoice-table{width:100%;border-collapse:collapse;margin:4px 0 18px}.invoice-table th{background:#f4f6fa;color:#68748a;font-size:7px;letter-spacing:.4px;text-align:left;padding:10px 7px}.invoice-table td{padding:10px 7px;border-bottom:1px solid #edf0f5;font-size:9px}.invoice-table .num,.tax-summary .num{text-align:right}.invoice-bottom{display:grid;grid-template-columns:1.25fr .85fr;gap:22px}.tax-summary h3{font:700 10px Manrope;margin:0 0 9px}.tax-summary table{width:100%;border-collapse:collapse}.tax-summary th{font-size:7px;color:#7c879a;text-align:left;padding:7px 4px;border-bottom:1px solid var(--line)}.tax-summary td{font-size:8px;padding:7px 4px;border-bottom:1px solid #f0f2f6}.amount-words{margin-top:17px}.amount-words p{font-size:8px;line-height:1.5;margin:0;color:#47536a}.totals>div{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #eef0f4;font-size:9px}.totals>div span{color:#707b8e}.totals .grand-total{margin-top:7px;padding:12px;background:#eef2ff;border:0;border-radius:5px;color:#244bd5;font-weight:700}.grand-total strong{font:800 15px Manrope}.invoice-footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);margin-top:25px;padding-top:15px}.invoice-footer>div:first-child{max-width:60%}.invoice-footer p{font-size:8px;margin-bottom:12px}.signature{text-align:center;align-self:flex-end;min-width:125px}.signature span{font-size:8px}.signature>div{height:35px;border-bottom:1px solid #9da7b8;margin-bottom:5px}.signature small{font-size:7px;color:#8490a3}.invoice-end{text-align:center;color:#a1a9b7;font-size:7px;margin-top:22px}.hidden{display:none!important}
+@media(max-width:1050px){.workspace{grid-template-columns:1fr;max-width:760px}.preview-area{position:static}.invoice{max-width:100%}}@media(max-width:600px){.topbar{padding:0 15px}.autosave{display:none}.workspace{padding:0 12px;margin:20px auto}.panel{padding:15px}.field-grid{grid-template-columns:1fr}.field-grid .wide{grid-column:auto}.item-fields{grid-template-columns:1fr 1fr}.item-fields .desc{grid-column:1/-1}.invoice{padding:22px 16px;overflow:auto}.invoice-bottom{grid-template-columns:1fr}.invoice-meta{grid-template-columns:1fr 1fr}.invoice-label{font-size:18px}.top-actions{gap:8px}}
+@page{size:A4;margin:12mm}@media print{body{background:#fff}.topbar,.editor,.preview-toolbar{display:none!important}.workspace{display:block;margin:0;padding:0;max-width:none}.preview-area{position:static}.invoice{box-shadow:none;border:0;padding:0;min-height:0;width:100%;font-size:10px}.invoice-footer{break-inside:avoid}.invoice-table,.invoice-bottom{break-inside:avoid}}
+
+/* YASH Enterprises branding */
+.brand-logo{width:46px;height:46px;object-fit:contain;display:block;flex:0 0 auto}
+.brand-mark{display:none}
+.invoice-brand{display:flex;align-items:center;gap:15px;min-width:0}
+.invoice-logo{width:112px;height:112px;object-fit:contain;flex:0 0 auto}
+.invoice-business-details{min-width:0}
+@media(max-width:600px){.invoice-logo{width:76px;height:76px}.invoice-brand{gap:9px}}
+
+/* Dark dashboard theme — invoice paper stays white for printing */
+:root{
+  --ink:#edf2ff;
+  --muted:#9aa7bd;
+  --line:#293449;
+  --blue:#5b82ff;
+  --bg:#0b1020;
+}
+body{background:#0b1020;color:#edf2ff}
+.topbar{background:#10182a;border-bottom:1px solid #27334a}
+.brand strong{color:#f4f7ff}
+.brand small,.autosave{color:#9aa7bd}
+.page-heading h1{color:#f4f7ff}
+.muted{color:#9aa7bd}
+.panel{background:#111a2d;border-color:#29364e;box-shadow:0 8px 24px #00000020}
+.panel-title h2{color:#edf2ff}
+.panel-title p{color:#98a6bd}
+.step{background:#1b2a4a;color:#8eacff}
+.field-grid label,.item-fields label{color:#b5c1d4}
+input,textarea,select{
+  background:#0b1324;color:#edf2ff;border-color:#33415b;
+  color-scheme:dark;
+}
+input::placeholder,textarea::placeholder{color:#71809a}
+input:focus,textarea:focus,select:focus{border-color:#668aff;box-shadow:0 0 0 3px #5b82ff20}
+.item-edit{background:#0d1628;border-color:#2d3a52}
+.item-edit-head{color:#dce5f6}
+.remove-item{background:#3a202c;color:#ff9ba9}
+.btn-light{background:#26334b;color:#dce5f6}
+.btn-outline{background:#17233a;border-color:#526da8;color:#a9beff}
+.btn-primary{background:#416df0;color:white}
+.preview-toolbar strong{color:#edf2ff}
+.preview-toolbar small,.preview-status{color:#9aa7bd}
+/* Keep the actual invoice white, regardless of dashboard theme */
+.invoice{
+  background:#fff;color:#263044;border-color:#e8ebf1;
+  box-shadow:0 8px 35px #00000045;
+  color-scheme:light;
+}
+@media print{
+  body{background:#fff;color:#172033}
+  .topbar,.editor,.preview-toolbar{display:none!important}
+  .invoice{background:#fff;color:#263044;box-shadow:none;border:0}
+}
+
+/* Billing and shipping addresses displayed side by side */
+.party-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;border-bottom:1px solid #edf0f5}
+.party-grid .bill-block{min-width:0;padding:20px 0}
+@media(max-width:600px){.party-grid{grid-template-columns:1fr;gap:0}}
+@media print{.party-grid{break-inside:avoid}}
