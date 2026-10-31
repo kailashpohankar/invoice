@@ -7,7 +7,7 @@
 .brand-logo{width:46px;height:46px;object-fit:contain;display:block;flex:0 0 auto}
 .brand-mark{display:none}
 .invoice-brand{display:flex;align-items:center;gap:15px;min-width:0}
-.invoice-logo{width:112px;height:112px;object-fit:contain;flex:0 0 auto}
+.invoice-logo{width:100px;height:100px;object-fit:contain;flex:0 0 auto}
 .invoice-business-details{min-width:0}
 @media(max-width:600px){.invoice-logo{width:76px;height:76px}.invoice-brand{gap:9px}}
 
